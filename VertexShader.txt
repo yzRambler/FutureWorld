@@ -1,0 +1,60 @@
+attribute vec3 aPosition;
+attribute vec3 aNormal;
+attribute vec3 aTangent;
+attribute vec2 a_TexCoord;
+uniform vec3 uCameraPos;
+uniform vec4 uLight;
+uniform mat4 uMatMVP;
+uniform mat4 uMatMV;
+uniform mat4 uMatWorld;
+uniform mat4 uMatV;
+varying vec2 v_TexCoord;
+varying vec3 v_CameraPos;
+varying vec3 v_View;
+varying vec4 v_Light;
+varying mat4 v_matMV;
+varying mat4 v_matV;
+varying mat4 v_matWorldInv;
+varying vec3 v_Nor;
+varying vec3 v_Tang;
+void main()
+{
+    vec4 vpos = vec4(aPosition, 1.0);
+    vpos =  vpos*uMatMVP;
+    vpos.xyz = vpos.xyz/vpos.w;
+    vpos.w = 1.0;
+    gl_Position = vpos;
+
+    v_TexCoord.xy = a_TexCoord.xy;
+    v_CameraPos = uCameraPos;
+
+        
+    v_matMV = uMatMV;
+    v_matV = uMatV;
+
+    vec4 view = vec4(uCameraPos-aPosition, 0.0);
+    v_View = normalize(view).xyz;
+
+    v_Light = normalize(uLight);
+   
+    vec4 v4Nor = vec4(aNormal, 0.0) * uMatWorld;
+    v_Nor = normalize(v4Nor.xyz);
+
+    vec4 v4Tag = vec4(aTangent, 0.0) * uMatWorld;
+    v_Tang = normalize(v4Tag.xyz);
+
+    vec4 r0 = uMatWorld[0];
+    vec4 r1 = uMatWorld[1];
+    vec4 r2 = uMatWorld[2];
+    vec4 r3 = uMatWorld[3];
+
+    
+    mat4 matWorldInv = mat4(
+        vec4(r0.x, r0.y, r0.z, r0.w),
+        vec4(r1.x, r1.y, r1.z, r1.w),
+        vec4(r2.x, r2.y, r2.z, r2.w),
+        vec4(r3.x, r3.y, r3.z, r3.w)
+    );
+
+    v_matWorldInv = matWorldInv;
+}
