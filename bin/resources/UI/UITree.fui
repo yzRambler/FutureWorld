@@ -1,0 +1,269 @@
+{
+    "UITree": {
+        "Name": "uiTree",
+        "TimeOrder": 0,
+        "SceneNode": {
+            "Name": "UIRoot",
+            "SpaceOrder": 1,
+            "SpaceWorld": {
+                    "Pos": {"x": 0.0, "y": -500.0, "z": 0.0},
+                    "Forward": {"x": 0.0, "y": 1.0, "z": 0.0},
+                    "Up": {"x": 0.0, "y": 0.0, "z": -1.0}
+            },
+            "Children": [
+                {
+                    "SceneNode" : {
+                        "Name": "UI Camera Node",
+            						"SpaceOrder": 1,
+            						"SpaceWorld": {
+            										"Pos": {"x": 0.0, "y": -10.0, "z": 0.0},
+                                "Forward": {"x": 0.0, "y": 1.0, "z": 0.0},
+                                "Up": {"x": 0.0, "y": 0.0, "z": -1.0}
+            						},
+                        "Construct": {
+                            "Class": "Essety",
+                						"Name": "Camera",
+                						"Component": [
+                								{
+                										"Class": "Camera",
+            												"Name": "UI Camera",
+            												"TargetSpaceOrder": 1,
+            												"TargetTimeOrder": 0,
+            												"TargetScreenID": 1,
+            												"Type": "Orthogra",
+                		   			        "Width": 800.0,
+                		   							"Height": 800.0,
+                		   							"Near": 1.0,
+                		   							"Far": 1000.0,
+                		   							"Command": [
+                		   							    { "Name": "Enable", "Value": "CullFace" },
+                		   							    { "Name": "Enable", "Value": "Depth" },
+                		   							    { "Name": "FrontFace", "Value": "CW" },
+                		   							    { "Name": "CullFace", "Value": "Back" },
+                		   							    { "Name": "ClearColor", "Value": { "r": 1.0, "g": 0.0, "b": 0.0, "a": 0.0 }},
+                		   							    { "Name": "Clear", "Value": "Depth" },
+                		   							    { "Name": "Clear", "Value": "Color" },
+                		   							    { "Name": "ViewPort", "Value": { "x": 0.0, "y":0.0, "w": 1.0, "h": 1.0 }}
+                		   							]
+                								}
+                						]
+                        }
+                    }
+                },
+                {
+                    "SceneNode": {
+                        "Name": "UINode TextBox",
+                        "SpaceOrder": 1,
+                        "SpaceWorld": {
+                            "Pos": {"x": 0.0, "y": -490.0, "z": 0.0},
+                            "Forward": {"x": 0.0, "y": 1.0, "z": 0.0},
+                            "Up": {"x": 0.0, "y": 0.0, "z": -1.0}
+                        },
+                        "Construct": {
+                            "Class": "Essety",
+                            "Name": "TextBoxEty",
+                            "Component": [
+                                {
+                                    "Class": "UI",
+                                    "UIType": "TextBox",
+                                    "Name": "textBox",
+                                    "TargetSpaceOrder": 1,
+                                    "NameMaterialFile": "./resources/UI/TextBox.mat",
+                                    "NameMaterial": "TextBoxMatl",
+                                    "Rect": { "x":513.0, "y":150, "w":256, "h":220 }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "SceneNode": {
+                        "Name": "UINode Count",
+                        "SpaceOrder": 1,
+                        "SpaceWorld": {
+                            "Pos": {"x": 0.0, "y": -490.0, "z": 0.0},
+                            "Forward": {"x": 0.0, "y": 1.0, "z": 0.0},
+                            "Up": {"x": 0.0, "y": 0.0, "z": -1.0}
+                        },
+                        "Construct": {
+                            "Class": "Essety",
+                            "Name": "UICountEty",
+                            "Component": [
+                                {
+                                    "Class": "UI",
+                                    "UIType": "Count",
+                                    "Name": "count",
+                                    "TargetSpaceOrder": 1,
+                                    "NameMaterialFile": "./resources/UI/BackgroundNull.mat",
+                                    "NameMaterial": "BackgroundNullMat",
+                                    "Rect": { "x":568.0, "y":230, "w":100, "h":20 }
+                                }
+                            ]
+                        }
+                    }
+                },
+                {
+                    "SceneNode": {
+                        "Name": "UINode Panel",
+                        "SpaceOrder": 1,
+                        "SpaceWorld": {
+                            "Pos": {"x": 0.0, "y": -490.0, "z": 0.0},
+                            "Forward": {"x": 0.0, "y": 1.0, "z": 0.0},
+                            "Up": {"x": 0.0, "y": 0.0, "z": -1.0}
+                        },
+                        "Construct": {
+                            "Class": "Essety",
+                            "Name": "PanelEty",
+                            "Component": [
+                                {
+                                    "Class": "UI",
+                                    "UIType": "Panel",
+                                    "Name": "panel",
+                                    "TargetSpaceOrder": 1,
+                                    "NameMaterialFile": "./resources/UI/Panel.mat",
+                                    "NameMaterial": "PanelMaterial",
+                                    "Rect": { "x":-10.0, "y":470, "w":820, "h":152 }
+                                }
+                            ]
+                        },
+                        "Children": [
+                            {
+                                "SceneNode": {
+                                    "Name": "UINode Button",
+                                    "SpaceOrder": 1,
+                                    "SpaceWorld": {
+                                        "Pos": {"x": 0.0, "y": -480.0, "z": 0.0},
+                                        "Forward": {"x": 0.0, "y": 1.0, "z": 0.0},
+                                        "Up": {"x": 0.0, "y": 0.0, "z": -1.0}
+                                    },
+                                    "Construct": {
+                                        "Class": "Essety",
+                                        "Name": "ButtonEty",
+                                        "Component": [
+                                            {
+                                                "Class": "UI",
+                                                "UIType": "Button",
+                                                "Name": "btnFirst",
+                                                "TargetSpaceOrder": 1,
+                                                "NameMaterialFile": "./resources/UI/ButtonFirst.mat",
+                                                "NameMaterial": "BtnFirstMatl",
+                                                "Rect": { "x":90.0, "y":530, "w":64, "h":32 }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "SceneNode": {
+                                    "Name": "UINode Button",
+                                    "SpaceOrder": 1,
+                                    "SpaceWorld": {
+                                        "Pos": {"x": 0.0, "y": -480.0, "z": 0.0},
+                                        "Forward": {"x": 0.0, "y": 1.0, "z": 0.0},
+                                        "Up": {"x": 0.0, "y": 0.0, "z": -1.0}
+                                    },
+                                    "Construct": {
+                                        "Class": "Essety",
+                                        "Name": "ButtonEty",
+                                        "Component": [
+                                            {
+                                                "Class": "UI",
+                                                "UIType": "Button",
+                                                "Name": "btnBefore",
+                                                "TargetSpaceOrder": 1,
+                                                "NameMaterialFile": "./resources/UI/ButtonBefore.mat",
+                                                "NameMaterial": "BtnBeforeMatl",
+                                                "Rect": { "x":224, "y":530, "w":64, "h":32 }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "SceneNode": {
+                                    "Name": "UINode Button",
+                                    "SpaceOrder": 1,
+                                    "SpaceWorld": {
+                                        "Pos": {"x": 0.0, "y": -480.0, "z": 0.0},
+                                        "Forward": {"x": 0.0, "y": 1.0, "z": 0.0},
+                                        "Up": {"x": 0.0, "y": 0.0, "z": -1.0}
+                                    },
+                                    "Construct": {
+                                        "Class": "Essety",
+                                        "Name": "ButtonEty",
+                                        "Component": [
+                                            {
+                                                "Class": "UI",
+                                                "UIType": "Button",
+                                                "Name": "btnPlay",
+                                                "TargetSpaceOrder": 1,
+                                                "NameMaterialFile": "./resources/UI/ButtonPlay.mat",
+                                                "NameMaterial": "BtnPlayMatl",
+                                                "Rect": { "x":358, "y":530, "w":64, "h":32 },
+                                                "Target": "Horse"
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "SceneNode": {
+                                    "Name": "UINode Button",
+                                    "SpaceOrder": 1,
+                                    "SpaceWorld": {
+                                        "Pos": {"x": 0.0, "y": -480.0, "z": 0.0},
+                                        "Forward": {"x": 0.0, "y": 1.0, "z": 0.0},
+                                        "Up": {"x": 0.0, "y": 0.0, "z": -1.0}
+                                    },
+                                    "Construct": {
+                                        "Class": "Essety",
+                                        "Name": "ButtonEty",
+                                        "Component": [
+                                            {
+                                                "Class": "UI",
+                                                "UIType": "Button",
+                                                "Name": "btnNext",
+                                                "TargetSpaceOrder": 1,
+                                                "NameMaterialFile": "./resources/UI/ButtonNext.mat",
+                                                "NameMaterial": "BtnNextMatl",
+                                                "Rect": { "x":492, "y":530, "w":64, "h":32 }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "SceneNode": {
+                                    "Name": "UINode Button",
+                                    "SpaceOrder": 1,
+                                    "SpaceWorld": {
+                                        "Pos": {"x": 0.0, "y": -480.0, "z": 0.0},
+                                        "Forward": {"x": 0.0, "y": 1.0, "z": 0.0},
+                                        "Up": {"x": 0.0, "y": 0.0, "z": -1.0}
+                                    },
+                                    "Construct": {
+                                        "Class": "Essety",
+                                        "Name": "ButtonEty",
+                                        "Component": [
+                                            {
+                                                "Class": "UI",
+                                                "UIType": "Button",
+                                                "Name": "btnLast",
+                                                "TargetSpaceOrder": 1,
+                                                "NameMaterialFile": "./resources/UI/ButtonLast.mat",
+                                                "NameMaterial": "BtnLastMatl",
+                                                "Rect": { "x":626, "y":530, "w":64, "h":32 }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                           
+                            
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "Material": {
+        "Name": "ButtonMaterial",
+        "NameFile": "./resources/UI/Button.mat",
+        "Order": 110,
+        "RenderType": "Opacity",
+        "TextureUnits": [
+            {  "NameSampler": "u_Sampler",
+               "Texture": {
+                   "Name": "NormalTexture",
+                   "NameFile": "./resources/UI/ButtonNor.png"
+                }
+             },
+             {
+                "NameSampler": "u_Sampler",
+                "Texture": {
+                    "Name": "HoverTexture",
+                    "NameFile": "./resources/UI/ButtonHov.png"
+                }
+             },
+             {
+                "NameSampler": "u_Sampler",
+                "Texture": {
+                    "Name": "PressTexture",
+                    "NameFile": "./resources/UI/ButtonPre.png"
+                }
+             }
+        ],
+        "Passes": [
+        		{
+        				
+        				"Program": {
+        				    "VertexAttribute": [
+        				        {"DataType": "vec3", "VarName": "aPosition", "AttrType": "VertexPos"},
+                        {"DataType": "vec2", "VarName": "aTexCoord", "AttrType": "VertexUV"}
+        				    ],
+        				    "ParameterUniform":[
+        				        {"DataType": "mat4", "VarName": "uMatMVP", "Class": "Camera", "Value": "ModelViewProjection"},
+        				        {"DataType": "samp2", "VarName": "uSampler", "Class": "Texture", "Ind": 0},
+        				        {"DataType": "samp2", "VarName": "uSampler", "Class": "Texture", "Ind": 1},
+        				        {"DataType": "samp2", "VarName": "uSampler", "Class": "Texture", "Ind": 2}
+        				    ],
+                		"VertexShader": {
+                    		"Name": "VertexShader",
+                    		"NameFile": "./resources/VSSingleTexture.txt"
+                		},
+                		"FragmentShader": {
+                    		"Name": "FragmentShader",
+                    		"NameFile": "./resources/FSSingleTexture.txt"
+                		}
+            		}
+        		}
+        ]
+    }
+}

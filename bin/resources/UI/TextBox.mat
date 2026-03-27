@@ -1,0 +1,44 @@
+{
+    "Material": {
+        "Name": "TextBoxMatl",
+        "NameFile": "./resources/UI/TextBox.mat",
+        "Order": 500,
+        "RenderType": "Transparent",
+        "TextureUnits": [
+            {  "NameSampler": "u_Sampler",
+               "Texture": {
+                   "Name": "BackgroundTexture",
+                   "NameFile": "./resources/UI/TextBox.png"
+                }
+             }
+        ],
+        "Passes": [
+        		{
+        				
+        				"Program": {
+        				    "VertexAttribute": [
+        				        {"DataType": "vec3", "VarName": "aPosition", "AttrType": "VertexPos"},
+                        {"DataType": "vec2", "VarName": "aTexCoord", "AttrType": "VertexUV"}
+        				    ],
+        				    "ParameterUniform":[
+        				        {"DataType": "mat4", "VarName": "uMatMVP", "Class": "Camera", "Value": "ModelViewProjection"},
+        				        {"DataType": "samp2", "VarName": "uSampler", "Class": "Texture", "Ind": 0}
+        				    ],
+                		"VertexShader": {
+                    		"Name": "VertexShader",
+                    		"NameFile": "./resources/VSSingleTexture.txt"
+                		},
+                		"FragmentShader": {
+                    		"Name": "FragmentShader",
+                    		"NameFile": "./resources/FSSingleTexture.txt"
+                		}
+            		},
+            		"Command": [
+            				{"Name": "Enable", "Value": "Blend"},
+            				{"Name": "Disable", "Value": "Depth"},
+            				{"Name": "BlendFunc", "Value": { "Src":"SA", "Tag":"1-SA" }}
+            		]
+        		}
+        ]
+    }
+}
