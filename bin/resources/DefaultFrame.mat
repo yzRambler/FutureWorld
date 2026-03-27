@@ -1,0 +1,32 @@
+{
+    "Material": {
+        "Name": "DefaultFrame",
+        "NameFile": "./resources/DefaultFrame.mat",
+        "Order": 100,
+        "RenderType": "Opacity",
+        "Passes": [
+        		{
+        		    
+        		"Program": {
+        		        "VertexAttribute": [
+        				                {"DataType": "vec3", "VarName": "aPosition", "AttrType": "VertexPos"}
+        				            ],
+        		        "ParameterUniform":[
+        				        {"DataType": "mat4", "VarName": "uMatMVP", "Class": "Camera", "Value": "ModelViewProjection"}
+        				    ],
+                		"VertexShader": {
+                    		"Name": "VertexShader",
+                    		"NameFile": "./resources/VSDefaultFrame.txt",
+                    		"KeyValue": [
+                        		{"Key": "VertexPos", "Value": "aPosition"}
+                    		]
+                		},
+                		"FragmentShader": {
+                    		"Name": "FragmentShader",
+                    		"NameFile": "./resources/FSDefaultFrame.txt"
+                		}
+            		}
+        		}
+        ]
+    }
+}

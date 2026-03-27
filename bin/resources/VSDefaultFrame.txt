@@ -1,0 +1,11 @@
+attribute vec3 aPosition;
+uniform mat4 uMatMVP;
+void main()
+{
+    vec4 vpos = vec4(aPosition, 1.0);
+    vpos = vpos * uMatMVP;
+	  vpos.xyz = vpos.xyz / vpos.w;
+	  vpos.w = 1.0;
+	  gl_Position = vpos;
+
+}

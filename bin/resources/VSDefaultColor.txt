@@ -1,0 +1,14 @@
+attribute vec3 aPosition;
+uniform vec4 uColor;
+uniform mat4 uMatMVP; 
+varying vec4 vColor; 
+void main()
+{
+	vec4 vpos = vec4(aPosition, 1.0);
+  vpos = vpos * uMatMVP;
+	vpos.xyz = vpos.xyz / vpos.w;
+	vpos.w = 1.0;
+	gl_Position = vpos;
+	
+  vColor = uColor; 
+}

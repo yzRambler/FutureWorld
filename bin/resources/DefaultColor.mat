@@ -1,0 +1,32 @@
+{
+    "Material": {
+        "Name": "DefaultColor",
+        "NameFile": "./resources/DefaultColor.mat",
+        "Order": 100,
+        "RenderType": "Opacity",
+        "Passes": [
+        		{
+        		"Program": {
+        		        "VertexAttribute": [
+        				                {"DataType": "vec3", "VarName": "aPosition", "AttrType": "VertexPos"}
+        				            ],
+        				    "ParameterUniform":[
+        				        {"DataType": "vec4", "VarName": "uColor", "Class": "Vector", "Value": [{"x": 1.0}, {"y": 1.0}, {"z": 1.0}, {"w": 1.0}]},
+        				        {"DataType": "mat4", "VarName": "uMatMVP", "Class": "Camera", "Value": "ModelViewProjection"}
+        				    ],
+                		"VertexShader": {
+                    		"Name": "VertexShader",
+                    		"NameFile": "./resources/VSDefaultColor.txt",
+                    		"KeyValue": [
+                        		{"Key": "VertexPos", "Value": "aPosition"}
+                    		]
+                		},
+                		"FragmentShader": {
+                    		"Name": "FragmentShader",
+                    		"NameFile": "./resources/FSDefaultColor.txt"
+                		}
+            		}
+        		}
+        ]
+    }
+}
