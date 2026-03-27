@@ -1,0 +1,61 @@
+{
+    "Material": {
+        "Name": "HorseEyeBallMaterial",
+        "NameFile": "./resources/Horse/HorseEyeBall.mat",
+        "Order": 100,
+        "RenderType": "Opacity",
+        "TextureUnits": [
+            {  "NameSampler": "u_Sampler",
+               "Texture": {
+                   "Name": "ColorTexture",
+                   "NameFile": "./resources/Horse/EyeBallColor.png"
+                }
+             },
+             {
+                "NameSampler": "u_norSampler",
+                "Texture": {
+                    "Name": "NormalMap",
+                    "NameFile": "./resources/Horse/EyeBallNormal.png"
+                }
+             }
+        ],
+        "Passes": [
+        		{
+        				"Program": {
+        				    "VertexAttribute": [
+        				        {"DataType": "vec3", "VarName": "aPosition", "AttrType": "VertexPos"},
+                        {"DataType": "vec3", "VarName": "aNormal", "AttrType": "VertexNormal"},
+                        {"DataType": "vec3", "VarName": "aTangent", "AttrType": "VertexTangent"},
+                        {"DataType": "vec2", "VarName": "a_TexCoord", "AttrType": "VertexUV"}
+        				    ],
+        				    "ParameterUniform":[
+        				        {"DataType": "vec3", "VarName": "uCameraPos", "Class": "Camera", "Value": "Position"},
+        				        {"DataType": "vec4", "VarName": "uLight", "Class": "Light", "Ind": 0, "Value": "Direct"},
+        				        {"DataType": "mat4", "VarName": "uMatMVP", "Class": "Camera", "Value": "ModelViewProjection"},
+        				        {"DataType": "mat4", "VarName": "uMatMV", "Class": "Camera", "Value": "ModelView"},
+        				        {"DataType": "mat4", "VarName": "uMatWorld", "Class": "WorldTransform"},
+        				        {"DataType": "mat4", "VarName": "uMatV", "Class": "Camera", "Value": "View"},
+        				        {"DataType": "samp2", "VarName": "u_Sampler", "Class": "Texture", "Ind": 0},
+        				        {"DataType": "samp2", "VarName": "u_norSampler", "Class": "Texture", "Ind": 1}
+        				    ],
+                		"VertexShader": {
+                    		"Name": "VertexShader",
+                    		"NameFile": "./resources/Horse/VertexShader.txt",
+                    		"KeyValue": [
+                        		{"Key": "VertexPos", "Value": "aPosition"},
+                        		{"Key": "VertexNormal", "Value": "aNormal"},
+                        		{"Key": "VertexTangent", "Value": "aTangent"},
+                        		{"Key": "VertexUV", "Value": "a_TexCoord"}
+                    		]
+                		},
+                		"FragmentShader": {
+                    		"Name": "FragmentShader",
+                    		"NameFile": "./resources/Horse/FragmentShader.txt"
+                		}
+            		}
+        		}
+            
+        ]
+        
+    }
+}
