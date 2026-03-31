@@ -2,6 +2,7 @@
 
 FutureWorld have achieved two running way: .exe for Windows and .wasm for Browser.  Here, I supply .exe file in Windows merely. The .wasm object is compiled by same 
 source codes as well (just little modifying).
+The demoe running in Internet can be found in my website: www.spaceyz.org. (www.spaceyz.org/horseAni.html)
 
 At present, FutureWorld be at test phase which use to check out various considering. FutureWorld is 3D engine for Internet mainly and base on Webassembly technology 
 which is compiled from source code into .wasm object file by Emscripten compiler. What problems will present in this procedure and latent trouble will be met as .wasm 
@@ -26,7 +27,7 @@ are splited some different pojectes with its' functionality. Some new functions 
 
 Now, third edition (Version 0.2.0 Alpha) primarily be used to test the result of which the compiled codes by Emscripten run for FrameBuffer of OpenGLES. To render UI, base on 
 this. UI can be considered a appliction on FutureWold Engine functions. All UI objects can be created from outside config file (.fui).
-This edition has improved the render procedure as well and defined the "Space-Time" conception.(i.e. all rendered objects is in specific "Space-Time").
+This edition has improved the render procedure as well and defined the "Space-Time" conception.(i.e. all rendered objects are in specific "Space-Time").
 
 
 Presently, Version 0.2.0 just offer part source codes.  In next step, I will redesign the architecture and reconstruct all codes throughly. The mulity-thread process and new 
