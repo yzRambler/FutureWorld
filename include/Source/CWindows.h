@@ -2,9 +2,9 @@
 CWindows
 
 Author: Zhen Yi
-Created Date: May 08, 2021
+Create Date: May 08, 2021
 
-Version: 0.2.0 Alpha
+Version 0.2.1 Alpha
 
 */
 
@@ -13,20 +13,27 @@ Version: 0.2.0 Alpha
 
 #include<stdio.h>
 #include"CPlatform.h"
+#include"CFileNode.h"
 
 namespace FW
 {
 	class CWindows : public CPlatform
 	{
+		//derived from CFilePlatform
 	public:
-		CWindows(){}
-		virtual ~CWindows(){}
-
-	    //derived from CFilePlatform
 		virtual void OpenAndCopy(CFile* pFile);
+		virtual CFileNode* CreateFileTree(const char* pszNamePath);
+
+
+	public:
+		CWindows();
+		virtual ~CWindows();
+
+
 
 	private:
 		FILE* m_pHandleFile;
+		CFileNode* m_pFileTreeRoot;
 
 	};
 

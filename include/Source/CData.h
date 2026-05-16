@@ -3,10 +3,11 @@
 CData
 
 
-Author: Zhen Yi
+Author: Zhen Yi (взеђ)
 
-Createed Date: April 23, 2023
-Version: 0.2.0 Alpha
+Create Date: April 23, 2023
+
+Version 0.2.1 Alpha
 
 */
 
@@ -16,17 +17,17 @@ Version: 0.2.0 Alpha
 
 #include"Common.h"
 #include"CString.h"
-#include"FWEngineCoreExport.h"
+#include"FWEngineBaseExport.h"
 
 
 namespace FW
 {
-	class DLLCOAPI CData
+	class DLLBSAPI CData
 	{
 	public:
-		CData():m_pSubclass(nullptr){}
-		CData(const char* pszName):m_pSubclass(nullptr){ m_strNameData.Set(pszName); }
-		virtual ~CData(){}
+		CData();
+		CData(const char* pszName); 
+		virtual ~CData();
 
 	//attribute
 	public:

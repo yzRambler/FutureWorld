@@ -1,10 +1,11 @@
 /*
 CFileManager
 
-Author: Zhen Yi
-Created Date: May 08, 2021
+Author: Zhen Yi (взеђ)
+Create Date: May 08, 2021
 
-Version: 0.2.0 Alpha
+
+Version 0.2.1 Alpha
 
 */
 
@@ -14,9 +15,11 @@ Version: 0.2.0 Alpha
 #include<memory>
 #include<vector>
 #include<list>
+#include"IFileManager.h"
 #include"CPlatform.h"
 #include"CICTarget.h"
-#include"FWEnginePrimatterManagerExport.h"
+#include"CFileOpListener.h"
+
 
 namespace FW
 {
@@ -24,7 +27,8 @@ namespace FW
 	class CFileDescribe;
 	class CPrimatterDescribe;
 	class CFileOpListener;
-	class DLLPRAPI CFileManager : public CICTarget
+
+	class CFileManager : public IFileManager
 	{
 	private:
 		typedef std::vector<CFile*> VTFILE;
@@ -33,11 +37,26 @@ namespace FW
 		typedef std::list<CFile*> LSFILE;
 		typedef LSFILE::iterator LSFILE_ITER;
 
-	//Inheriate from CICTarget
+	//Inheriate from IFileManager
 	public:
 		virtual bool RegisterLst(CListener* pLsn);
 		virtual void UnregisterLst(CListener* pLsn);
 		virtual void Update();
+
+		virtual void HandlePrimatterApply(CPrimatterDescribe* pPmtDesc);
+		virtual void HandleFileApply(CFileDescribe* pFileDesc);
+
+		virtual CFile* SearchFinishedFileQueue(const char* pszNamePathFile);
+		virtual CFile* SearchRequestFilesQueue(const char* pszNamePathFile);
+
+		virtual bool TransformFileFromFBX2FWD(const char* pszNameFilePathSrc);
+
+		virtual bool Package(const char* pszNameFolder, const char* pszNamePackage);
+		virtual bool Unpackage(const char* pszNamePath, const char* pszNamePackage);
+
+
+
+		virtual CICTarget* targetIC() { return m_pICTag; }
 
 
 	public:
@@ -46,12 +65,9 @@ namespace FW
 
 		bool Create();
 		void Destroy();
-		void HandlePrimatterApply(CPrimatterDescribe* pPmtDesc);
-		void HandleFileApply(CFileDescribe* pFileDesc);
 
-		CFile* SearchFinishedFileQueue(const char* pszNamePathFile);
-		CFile* SearchRequestFilesQueue(const char* pszNamePathFile);
 
+		//void ApplyFileWithListener(const char* pszNameFilePath, CFileOpListener* pFileOpLsn);
 
 
 	public:
@@ -89,7 +105,9 @@ namespace FW
 		CFile* m_pCurrentFile;
 
 		CPlatform* m_pPlatform;
+		CICTarget* m_pICTag;
 
+		CFileOpListener* m_pFileLsn;
 
 	};
 

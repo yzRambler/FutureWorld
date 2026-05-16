@@ -1,10 +1,10 @@
 /*
 CAspect
 
-Author: Zhen Yi
-Created Date: May 08, 2021
+Author: Zhen Yi (взеђ)
+Create Date: May 08, 2021
 
-Version: 0.2.0 Alpha
+Version 0.2.1 Alpha
 
 */
 
@@ -16,12 +16,13 @@ Version: 0.2.0 Alpha
 #include"CBase.h"
 #include"CommonPrimatter.h"
 #include "IPrimatterManager.h"
+#include"FWEngineBaseExport.h"
 
 namespace FW
 {
 	class CConstruct;
 	class CAspectCenter;
-	class CAspect : public CBase
+	class DLLBSAPI CAspect : public CBase
 	{
 	public:
 		CAspect(CAspect* pHost = 0) :m_eState(EAPTSTATE::APT_UNKNOWN), 
@@ -51,6 +52,7 @@ namespace FW
 		* Parameter n = 0: only create a instance object; = 1: clone (create new) current object. 
 		*/
 		virtual CAspect* Duplicate(int n);
+		//virtual void CloneName(const char* pszName);
 
 
 		virtual EAPTSTATE CheckState(CAspectCenter* pAtpCent) { return EAPTSTATE::APT_UNKNOWN; }

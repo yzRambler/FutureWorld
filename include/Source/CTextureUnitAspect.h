@@ -4,7 +4,7 @@ CTextureUnitAspect
 Author: Zhen Yi
 Created Date: May 07, 2021
 
-Version: 0.2.0 Alpha
+Version: 0.2.1 Alpha
 
 */
 

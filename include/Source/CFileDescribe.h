@@ -3,12 +3,11 @@
 CDesribe
 
 
-Author:    Zhen Yi
+Author:    Zhen Yi (взеђ)
 
-Created Date:  Apr.  2025
+Date:  Apr.  2025
 
-Version: 0.2.0 Alpha
-
+Version 0.2.1 Alpha
 
 */
 
@@ -19,16 +18,16 @@ Version: 0.2.0 Alpha
 #include<string>
 #include"CommonPrimatter.h"
 #include"CAspect.h"
-#include"FWEnginePrimatterManagerExport.h"
+#include"FWFileManagerExport.h"
 
 
 namespace FW
 {
-	//class CListener;
-	class DLLPRAPI CFileDescribe : public CBase
+	class DLLFMAPI CFileDescribe : public CBase
 	{
 	public:
-		CFileDescribe(EFILETYPE fileType = EFILETYPE::FI_UNKNOWN) :m_typeFile(fileType){}
+		CFileDescribe(EFILETYPE fileType = EFILETYPE::FI_UNKNOWN) :m_typeFile(fileType)
+			{}
 
 		virtual ~CFileDescribe() { /*m_pLsn = nullptr; */ }
 
@@ -50,7 +49,7 @@ namespace FW
 
 
 	//CAspectDescirbe is a description of secene file or material file.
-	class CAspectDescribe : public CFileDescribe
+	class DLLFMAPI CAspectDescribe : public CFileDescribe
 	{
 	public:
 		CAspectDescribe() {}
@@ -62,7 +61,7 @@ namespace FW
 
 
 	//CPrimatterDescribe is a description of model file or texture file or shader file.
-	class CPrimatterDescribe : public CFileDescribe
+	class DLLFMAPI CPrimatterDescribe : public CFileDescribe
 	{
 	public:
 		CPrimatterDescribe() :m_typePmt(EPMTTYPE::PR_UNKNOWN) {}

@@ -4,11 +4,11 @@ CConstruct
 
 
 
-Author: Zhen Yi
+Author: Zhen Yi (взеђ)
 
-Created Date: Feb. 19, 2023
+Create Date: Feb. 19, 2023
 
-Version: 0.2.0 Alpha
+Version 0.2.1 Alpha
 
 */
 
@@ -18,26 +18,23 @@ Version: 0.2.0 Alpha
 
 #include"CBase.h"
 #include"CommonPrimatter.h"
-#include"FWEngineCoreExport.h"
-#include"IPrimatterManager.h"
+#include"BaseData.h"
+#include"FWEngineBaseExport.h"
 
 
 namespace FW
 {
-	//class CConstruct : public CBase
-	class DLLCOAPI CConstruct : public CBase
+	class IPrimatterManager;
+	class IRenderManager;
+	class DLLBSAPI CConstruct : public CBase
 	{
 	public:
-		CConstruct(CConstruct* pHost, ECONSTRTYPE typeCST = ECONSTRTYPE::CST_UNKNOWN): m_id(0), 
-			m_pHost(pHost), m_eConType(typeCST), m_eState(EPMTSTATE::UNKNOWN), m_bActive(true),
-			m_eGenFrom(EGEN::GE_UNKNOW){}
+		CConstruct(CConstruct* pHost, ECONSTRTYPE typeCST = ECONSTRTYPE::CST_UNKNOWN);
 
 		CConstruct(const char* pszName, CConstruct* pHost, ECONSTRTYPE typeCST =
-			ECONSTRTYPE::CST_UNKNOWN):CBase(pszName), m_id(0), m_pHost(pHost), 
-			m_eConType(typeCST), 
-			m_eState(EPMTSTATE::UNKNOWN), m_bActive(true), m_eGenFrom(EGEN::GE_UNKNOW){}
+			ECONSTRTYPE::CST_UNKNOWN);
 
-		virtual ~CConstruct(){}
+		virtual ~CConstruct();
 
 		virtual void Update(float ratio, long lDltTime, IPrimatterManager* pPmtCent, 
 			IRenderManager* pRenderMag) {}

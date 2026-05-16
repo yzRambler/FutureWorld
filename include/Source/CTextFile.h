@@ -4,10 +4,10 @@ CTextFile
 
 
 
-Author: Zhen Yi
-Created Date: Mar.30, 2021
+Author: Zhen Yi (взеђ)
+Create Date: Mar.30, 2021
 
-Version: 0.2.0 Alpha
+Version 0.2.1 
 
 */
 

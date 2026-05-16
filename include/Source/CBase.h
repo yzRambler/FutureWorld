@@ -1,11 +1,10 @@
 /*
 CBase
 
+Author: Zhen Yi (взеђ)
+Create Date: May 7 2021
 
-Author: Zhen Yi
-Created Date: May 7 2021
-
-Version: 0.2.0 Alpha
+Version 0.2.1 Alpha
 
 */
 
@@ -16,11 +15,12 @@ Version: 0.2.0 Alpha
 #define _FW_BASE_
 
 #include"CString.h"
+#include"FWEngineBaseExport.h"
 
 
 namespace FW
 {
-	class CBase
+	class DLLBSAPI CBase
 	{
 	public:
 		CBase() {}

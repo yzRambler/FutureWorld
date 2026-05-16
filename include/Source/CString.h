@@ -2,11 +2,11 @@
 
 CString
 
-Author:  Zhen Yi.    易镇
+Author:  Zhen Yi. (易镇)
 
-Created Date: Mar. 5, 2024
+Create Date: Mar. 5, 2024
 
-Version: 0.2.0 Alpha
+Version 0.2.1 Alpha
 
 */
 
@@ -14,14 +14,13 @@ Version: 0.2.0 Alpha
 #ifndef _FW_STRING_
 #define _FW_STRING_
 #include<memory>
-#include"FWEngineCoreExport.h"
-
+#include"FWEngineBaseExport.h"
 
 
 
 namespace FW
 {
-	class DLLCOAPI CString
+	class DLLBSAPI CString
 	{
 	public:
 		CString():m_pszStr(nullptr) {}

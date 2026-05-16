@@ -6,7 +6,7 @@ Author:  Zhen Yi
 
 Created Date: Oct. 21, 2023
 
-Version: 0.2.0 Alpha
+Version: 0.2.1 Alpha
 
 */
 

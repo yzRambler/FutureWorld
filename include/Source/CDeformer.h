@@ -7,7 +7,7 @@ CDeformer
 Author: Zhen Yi
 Created Date: Dec. 05, 2022
 
-Version: 0.2.0 Alpha
+Version: 0.2.1 Alpha
 
 */
 

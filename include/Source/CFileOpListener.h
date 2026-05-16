@@ -4,10 +4,9 @@ CFileOpListener
 
 Author:  Zhen Yi
 
-Created Date:  Jul. 26, 2025
+Create Date:  Jul. 26, 2025
 
-Version: 0.2.0 Alpha
-
+Version 0.2.1 Alpha
 
 */
 
@@ -16,13 +15,13 @@ Version: 0.2.0 Alpha
 #define _FW_FILEOP_LISTENER_
 
 #include"CListener.h"
-#include"FWEnginePrimatterManagerExport.h"
+#include"FWFileManagerExport.h"
 
 
 namespace FW
 {
 	class CFBXFile;
-	class DLLPRAPI CFileOpListener : public CListener
+	class DLLFMAPI CFileOpListener : public CListener
 	{
 	//Inheriate from CListener
 	public:

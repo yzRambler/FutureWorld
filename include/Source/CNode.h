@@ -1,10 +1,11 @@
 /*
 CNode
 
-Author: Zhen Yi
-Created Date: May 07, 2021
+Author: Zhen Yi (взеђ)
 
-Version: 0.2.0 Alpha
+Date: May 07, 2021
+
+Version 0.2.1 Alpha
 
 */
 
@@ -12,33 +13,19 @@ Version: 0.2.0 Alpha
 #define _FW_NODE_
 
 
-#include"CBase.h"
 #include<vector>
+#include"CBase.h"
+#include"FWEngineBaseExport.h"
 
 
 
 namespace FW
 {
-	class CNode
+	class DLLBSAPI CNode
 	{
 	public:
-		CNode():m_pParent(0) { m_vtSubNodes.clear(); }
-		//CNode(const char* pszName):CBase(pszName), m_pParent(0) { m_vtSubNodes.clear(); }
-
-		virtual ~CNode()
-		{
-			m_pParent = 0;
-
-			for (std::vector<CNode*>::iterator iter = m_vtSubNodes.begin(); iter != m_vtSubNodes.end(); ++iter)
-			{
-				if (*iter != 0)
-				{
-					delete* iter;
-				}
-			}
-
-			m_vtSubNodes.clear();
-		}
+		CNode();
+		virtual ~CNode();
 
 		bool isNoneParent() { return (m_pParent == 0); }
 		bool isEmptySubnodes() { return m_vtSubNodes.empty(); }

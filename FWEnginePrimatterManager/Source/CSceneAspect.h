@@ -6,7 +6,7 @@ CSceneAspect
 Author:  Zhen Yi
 Created Date: Feb. 06, 2023
 
-Version: 0.2.0 Alpha
+Version: 0.2.1 Alpha
 
 */
 

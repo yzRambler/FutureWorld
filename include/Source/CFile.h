@@ -1,10 +1,10 @@
 /*
 CFile
 
-Author: Zhen Yi
-Created Date: May 08, 2021
+Author: Zhen Yi (взеђ)
+Date: May 08, 2021
 
-Version: 0.2.0 Alpha
+Version 0.2.1 Alpha
 
 */
 
@@ -15,11 +15,12 @@ Version: 0.2.0 Alpha
 #include<string>
 #include"CBase.h"
 #include"CommonPrimatter.h"
-#include"FWEnginePrimatterManagerExport.h"
+#include"FWFileManagerExport.h"
 
 namespace FW
 {
-	class DLLPRAPI CFile : public CBase
+	//class CListener;
+	class DLLFMAPI CFile : public CBase
 	{
 	public:
 		typedef enum { NONE = 0, INVALID, WAITING_PROC, WAITING_DATA, COPY_SUC, PARSE_SUC } EFSTATE;
@@ -45,7 +46,11 @@ namespace FW
 
 		char* GetBuffer() { return m_pBuffer; }
 
-		virtual bool Parse() = 0;
+
+		virtual bool Parse() { return true; }
+
+		//virtual bool Parse() = 0;
+		//void LoadFinish();
 
 
 	//attribute
@@ -59,6 +64,7 @@ namespace FW
 		EFILETYPE type() { return m_eFileType; }
 		void setType(EFILETYPE type) { m_eFileType = type; }
 
+		//void setListener(CListener* pLsn) { m_pLsn = pLsn; }
 
 
 		bool processing() { return (m_eFileState == EFSTATE::WAITING_DATA) 
@@ -68,10 +74,12 @@ namespace FW
 		int size() { return m_nSize; }
 
 	protected:
+		//const char* m_pszNamePathFile;
 		CString m_strNamePathFile;
 		EFSTATE m_eFileState;
 		EFILETYPE m_eFileType;
 
+		//CListener* m_pLsn;
 
 		char* m_pBuffer;
 		int m_nSize;

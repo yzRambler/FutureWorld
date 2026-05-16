@@ -1,12 +1,13 @@
-
 /*
 
 CIDManager
 
 
-Author:  Zhen Yi
+Author:  Zhen Yi (взеђ)
 
-Version: 0.2.0 Alpha
+Create Data: May 2022
+
+Version 0.2.1 Alpha
 
 */
 
@@ -19,8 +20,7 @@ Version: 0.2.0 Alpha
 #include<vector>
 
 #include"Common.h"
-//#include"CommonShare.h"
-#include"FWEngineShareExport.h"
+#include"FWEngineBaseExport.h"
 
 #define MAX_INDEX  65535
 #define MAX_SIZE  65536
@@ -29,7 +29,7 @@ Version: 0.2.0 Alpha
 
 namespace FW
 {
-	class DLLSHAPI CIDManager
+	class DLLBSAPI CIDManager
 	{
 		typedef std::vector<UID*> VTID;
 		typedef VTID::iterator VTITER;
