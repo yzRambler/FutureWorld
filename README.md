@@ -89,7 +89,7 @@ Implemented
 
 - Material and pass separation; per-draw uniform caching
 
-- Abstract the Space-Time conception and framework.
+-Abstract the Space-Time conception and framework.
 
 
 **UI system (initial)**
