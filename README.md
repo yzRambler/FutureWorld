@@ -28,39 +28,44 @@ a browser sandbox — and what breaks when it gets there.
 ---
 
 ## At a glance
-| | |
-|---|---|
+
 | Language | C++ |
+
 | Build | MSVC (Windows) / Emscripten (WebAssembly) |
+
 | Graphics API | OpenGL ES 2.0 / 3.0 |
+
 | Platforms | Windows, Desktop Browsers, Mobile Browsers |
+
 | Started from scratch | August 2020 |
+
 | First release  | March 2025 |
 
 
 ## Architecture
 The engine is split into independent modules with a one-way dependency flow:
 
-FWEditor Tooling / scene authoring
+- FWEditor Tooling / scene authoring
 |
-FWUI Retained-mode UI widgets
+- FWUI Retained-mode UI widgets
 |
-FWEngineSceneManager Scene graph and node lifecycle
+- FWEngineSceneManager Scene graph and node lifecycle
 |
-FWEngineRenderManager Render graph, material and pass management
+- FWEngineRenderManager Render graph, material and pass management
 |
-FWEnginePrimatterManager Asset(material, picture, model file, font library etc. )  management
+- FWEnginePrimatterManager Asset(material, picture, model file, font library etc. )  management
 |
-FWEngineCore / FWEngineBase The core objects of this engine.
+- FWEngineCore / FWEngineBase The core objects of this engine.
 |
-FWFileManager / FWIOSystem Virtual filesystem and IO manager
+- FWFileManager / FWIOSystem Virtual filesystem and IO manager
 |
-FWMathLibrary Vectors, matrices, quaternions, projections
+- FWMathLibrary Vectors, matrices, quaternions, projections
 
 
 Implemented
 -
 **Resource management**
+-
 - Support common file (FBX / PNG /OBJ  model file) and 
    **custom file** (FWD contain model mesh, joint hierarchy, skinning weights, 
     keyframe tracks) 
@@ -75,6 +80,7 @@ Implemented
 
 
 **Render management (in progress)**
+-
 - **Transparency sorting via merge sort.** Transparent geometry must be drawn
   back-to-front every frame. Merge sort was chosen deliberately: it is stable,
   guarantees O(n log n), and runs in O(n) on nearly-sorted input — which is
@@ -85,6 +91,7 @@ Implemented
 
 
 **UI system (initial)**
+-
 - Retained-mode widget tree with layout, hit testing and input routing
 
 -Custom font library
