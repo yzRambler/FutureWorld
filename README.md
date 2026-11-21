@@ -97,6 +97,7 @@ Implemented
 -Custom font library
 
 **Math library**
+-
 - Self-contained vector / matrix / quaternion implementation, written to
   control the exact memory layout the renderer expects rather than adapting
   to a third-party convention
