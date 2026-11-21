@@ -1,7 +1,7 @@
 # FutureWorld
 A lightweight, cross-platform 3D engine written in C++ and compiled to
-WebAssembly via Emscripten. Runs natively on Windows and in the browser
-(desktop and mobile) from a single source tree.
+WebAssembly via Emscripten. Runs natively in the browser (desktop and mobile) 
+and on Windows from a single source tree.
 
 **Live demo:** 
 
