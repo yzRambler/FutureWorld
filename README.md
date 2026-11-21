@@ -3,10 +3,15 @@ A lightweight, cross-platform 3D engine written in C++ and compiled to
 WebAssembly via Emscripten. Runs natively on Windows and in the browser
 (desktop and mobile) from a single source tree.
 
-**Live demo:** https://www.spaceyz.org/horseAni.html   (in the browser)
-                        https://github.com/yzRambler/FutureWorld/releases/tag/FutureWorld   (on Windows)
+**Live demo:** 
 
-**Engine viewer:** https://www.spaceyz.org
+https://www.spaceyz.org/horseAni.html   (in the browser)
+
+https://github.com/yzRambler/FutureWorld/releases/tag/FutureWorld   (on Windows)
+
+
+**Engine viewer:** 
+https://www.spaceyz.org
 
 ---
 
@@ -52,7 +57,9 @@ FWFileManager / FWIOSystem Virtual filesystem and IO manager
 |
 FWMathLibrary Vectors, matrices, quaternions, projections
 
-### Implemented
+
+Implemented
+-
 **Resource management**
 - Support common file (FBX / PNG /OBJ  model file) and 
    **custom file** (FWD contain model mesh, joint hierarchy, skinning weights, 
@@ -63,7 +70,8 @@ FWMathLibrary Vectors, matrices, quaternions, projections
 
 - Reference-counted asset lifetime; shared resource is uploaded to the GPU once
 
-- Sleletal animation acceleration algorithm 
+-Skeletal animation acceleration algorithm
+  
 
 
 **Render management (in progress)**
@@ -75,25 +83,34 @@ FWMathLibrary Vectors, matrices, quaternions, projections
 
 - Material and pass separation; per-draw uniform caching
 
+
 **UI system (initial)**
 - Retained-mode widget tree with layout, hit testing and input routing
 
-- Custom font library
+-Custom font library
 
 **Math library**
 - Self-contained vector / matrix / quaternion implementation, written to
   control the exact memory layout the renderer expects rather than adapting
   to a third-party convention
 
-### Next
-- Scene management (BSP/Quadtree/Octree for acceleration culling algoritm are the next milestone)
-- PBR rendering
-- Multi-threaded pool
 
-## Build
-### Windows
+Next
+-
+- Scene management (BSP/Quadtree/Octree for acceleration culling algoritm are the next milestone)
+
+- PBR rendering
+
+-Multi-threaded pool
+
+
+Build
+-
+- Windows
+
 Install Visual Studio 2019 or later with the C++ desktop workload
 
-### WebAssembly
+- WebAssembly
+
 Install and activate emsdk (emsdk install latest && emsdk activate latest)
 
