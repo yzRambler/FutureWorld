@@ -73,7 +73,7 @@ Implemented
 - Custom **resource package format(PAK)** with an internal index, so a whole
   scene ships as a single file
 
-- Reference-counted asset lifetime; shared resource is uploaded to the GPU once
+- Reference-counted asset lifetime; shared resource is uploaded to the memory once
 
 -Skeletal animation acceleration algorithm
   
